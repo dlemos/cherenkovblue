@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset=utf-8>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Cherenkov Blue</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+		<style>
+			/* do what I say not what I do */
+			body {
+				/*background-color: #02255a;*/
+				background: rgb(2,37,90);
+				background: linear-gradient(24deg, rgba(2,37,90,1) -10%, rgba(69,108,175,1) 90%);
+			}
+			header > h1 {
+				color: #fbcd44;
+				background-color: #456caf;
+				text-shadow: 0.04em 0.04em 0.1em  yellow;
+				text-decoration: underline solid 4px lightblue;
+			}
+			h1, h2, h3, h4 {
+				font-weight: lighter !important;
+			}
+			main {
+				background-color: rgba(0,0,0,0.16);
+			}
+			#specialities:hover {
+				filter: url(#sofGlow);
+			}
+			#specialities .card:hover {
+				scale: 1.03;
+			}
+		</style>
+	</head>
+	<body class="vw-100">
+		<header class="container-fluid-xl gx-0">
+			<h1 class="display-1 px-3">Cherenkov Blue</h1>
+		</header>
+		<main class="py-5 py-md-11">
+			<section id="specialities">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<h2 class="display-2">Our specialities</h2>	
+						</div>
+					</div>
+					<div class="row g-3">
+						<div class="col-lg-4 col-md-6 col-12 mh-100">
+							<div class="card">
+								<img src="django-logo-negative.png" class="card-img-top" alt="Django project logo">
+								<div class="card-body">
+									<h5 class="card-title">Django Framework</h5>
+									<p class="card-text">We have more than a decade developing Aplications, APIs and doing maintance on legacy systems written in Python/Django. Using libraries like <a target="_blank" href="https://www.django-rest-framework.org/">Django REST Framework</a> and <a target="_blank" href="https://docs.celeryq.dev/en/stable/">Celery</a> we can delivery something functional quickly and keep iterating over it as required.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="card h-100">
+								<img src="jQuery-Logo_On_Dark.png" class="card-img-top" alt="jQuery logo">
+								<div class="card-body">
+									<h5 class="card-title">Legacy Front-end in jQuery</h5>
+									<p class="card-text">Have an old site or aplication that uses jQuery? We can fix any bugs, update it or make changes you require.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="card h-100">
+								<img src="htmx_logo.png" class="card-img-top" alt="HTMX logo">
+								<div class="card-body">
+									<h5 class="card-title">Front-end using HTMX and Bootstrap</h5>
+									<p class="card-text">We can make you a responsive single page layout using Bootstrap or Tailwind and add some dynamism using HTMX. We can go from consuming static JSON or HTML to retreaving data from your API.</p>
+								</div>
+							</div>
+						</div>
+					<div>
+				</div>
+			</section>
+			<section class="py-4">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 text-center">
+							<h3>Testimonials</h2>
+						</div>
+					</div>
+					<div class="row justify-content-center mh-100">
+						<div class="col-md-4">
+							<div class="card h-100">
+								<div class="card-body">
+									<blockquote class="blockquote">
+										<p>They go so fast they make water glow blue!</p>
+									</blockquote>
+									<footer class="blockquote-footer">Anonymous</cite></footer>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card h-100">
+								<div class="card-body">
+									<blockquote class="blockquote">
+										<p>They are hot, as in emitting neutrons hot.</p>
+									</blockquote>
+									<footer class="blockquote-footer">Nuclear Physicist</cite></footer>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="small mt-1">
+			<div class="container">
+				<div class="row border-top pt-4 justify-content-between">
+					<div class="col-12 col-md-4 col-lg-3 align-self-end">
+						<h3>Cherenkov Blue</h3>
+						<p>&copy; 2023, 2024, 2025 Cherenkov Blue</p>
+					</div>
+					<div class="col-12 col-md-4 col-lg-3 text-center">
+						<p>Proudly made in Rio de Janeiro</p>
+						<img src="Bandeira_do_estado_do_Rio_de_Janeiro.svg" width="100vw" />
+					</div>
+				</div>
+			</div>
+		</footer>
+		<svg width="0" height="0" id="glow__svg_">
+		<filter id="sofGlow" height="200%" width="200%">
+			<!-- Thicken out the original shape -->
+			<feMorphology id="morph" operator="dilate" radius="4" in="SourceAlpha" result="thicken" />
+	
+			<!-- Use a gaussian blur to create the soft blurriness of the glow -->
+			<feGaussianBlur id="thicken" in="thicken" stdDeviation="10" result="blurred" />
+	
+			<!-- Change the colour -->
+			<feFlood flood-color="rgb(0,186,255)" result="glowColor" />
+	
+			<!-- Color in the glows -->
+			<feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
+	
+			<!--	Layer the effects together -->
+			<feMerge>
+				<feMergeNode in="softGlow_colored"/>
+				<feMergeNode in="SourceGraphic"/>
+			</feMerge>
+		</filter>
+		</svg>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+	</body>
+</html>
